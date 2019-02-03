@@ -18,7 +18,7 @@ import cucumber.api.junit.Cucumber;
 		dryRun = false, 
 		features = 
 				{
-//				"src/test/resources/acceptancecriteria/FilteringAnyThingFromHomePage.feature,"
+				"src/test/resources/acceptancecriteria/FilteringAnyThingFromHomePage.feature",
 				"src/test/resources/acceptancecriteria/PuttingStuffOnTheCart.feature" 
 				}, 
 		glue = 
