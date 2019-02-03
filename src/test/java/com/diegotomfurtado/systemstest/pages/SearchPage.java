@@ -31,7 +31,7 @@ public class SearchPage {
 
 	public void selectAnyProductFromTheProductList() {
 
-		_commonMethods.clickOnButton(_conferingAProduct);
+		_commonMethods.clickOnFirstProduct(_conferingAProduct);
 	}
 
 	public void chooseTheHighestPrice() {
@@ -76,6 +76,7 @@ public class SearchPage {
 	private static final By _chooseOrderProductList = xpath(
 			"//li[@class = 'item opened']//a[contains(@href,'highest-first')]");
 	private static final By _conferingAProduct = xpath("//a[@class ='i card-link']");
+//	private static final By _conferingAProduct = xpath("//button[@id ='quick-view-button' and text() = 'Conferir']");
 	private static final By _chooseTheSizeProduct = xpath("//a[@class = 'product-item' and @qa-option= 'available']");
 	private static final By _chooseAnotherSizeProduct = xpath(
 			"//ul[@class = 'radio-options']//li[not(@class='unavailable')][2]");

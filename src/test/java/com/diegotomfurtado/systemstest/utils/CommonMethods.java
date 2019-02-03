@@ -1,6 +1,7 @@
 package com.diegotomfurtado.systemstest.utils;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.liferay.gs.testFramework.SeleniumReadPropertyKeys;
@@ -24,14 +25,14 @@ public class CommonMethods {
 	}
 
 	public void input(By locator, String input) {
-		
+
 		waitElementVisibilityAndBeClickable(locator);
 		SeleniumReadPropertyKeys.DRIVER.findElement(locator).clear();
 		SeleniumReadPropertyKeys.DRIVER.findElement(locator).sendKeys(input);
 	}
 
 	public String readingTheFilterResult(By locator) {
-		
+
 		waitElementAppearOnScreen(locator);
 		return SeleniumReadPropertyKeys.DRIVER.findElement(locator).getText();
 	}
@@ -45,11 +46,18 @@ public class CommonMethods {
 		waitElementAppearOnScreen(locator);
 		SeleniumWaitMethods.getWaitDriver().until(ExpectedConditions.elementToBeClickable(locator));
 	}
-	
+
 	public void returnToPreviousPage() {
-		
+
 		SeleniumReadPropertyKeys.DRIVER.navigate().back();
 	}
 
+	public void clickOnFirstProduct(By locator) {
+
+		action.moveToElement(SeleniumReadPropertyKeys.DRIVER.findElement(locator)).build().perform();
+		clickOnButton(locator);
+	}
+
+	Actions action = new Actions(SeleniumReadPropertyKeys.DRIVER);
 
 }
