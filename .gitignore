@@ -1,5 +1,4 @@
-*/bin/*
-.settings/
-.gradle/
-.project/
-.classpath/
+*.settings
+*.gradle
+*.project
+*.classpath
