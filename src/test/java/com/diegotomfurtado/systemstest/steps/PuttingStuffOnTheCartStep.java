@@ -25,14 +25,14 @@ public class PuttingStuffOnTheCartStep {
 	}
 
 	@Given("^a user has (\\d+) reais to spend$")
-	public int aUserHasReaisToSpend(int money) throws Throwable {
+	public double aUserHasReaisToSpend(double money){
 
 		getTotalMoney = money;
 		return getTotalMoney;
 	}
 
 	@When("^a user chooses the products \"([^\"]*)\"$")
-	public void aUserChoosesTheProducts(String getProductName) throws Throwable {
+	public void aUserChoosesTheProducts(String getProductName){
 
 		_homePage.filteringBySpecificProduct(getProductName);
 		_searchPage.chooseTheHighestPrice();
@@ -40,12 +40,12 @@ public class PuttingStuffOnTheCartStep {
 	}
 
 	@Then("^while a user has money will can put more products on the cart$")
-	public void whileAUserHasMoneyWillCanPutMoreProductsOnTheCart() throws Throwable {
+	public void whileAUserHasMoneyWillCanPutMoreProductsOnTheCart(){
 
-		Assert.assertTrue(_cartPage.fillingTheCart(getTotalMoney));
+		Assert.assertTrue(_cartPage.puttingIntoTheCartWhileHasMoney(getTotalMoney));
 	}
 
-	int getTotalMoney = 0;
+	double getTotalMoney = 0;
 	private static final HomePage _homePage = new HomePage();
 	private static final SearchPage _searchPage = new SearchPage();
 	private static final CartPage _cartPage = new CartPage();

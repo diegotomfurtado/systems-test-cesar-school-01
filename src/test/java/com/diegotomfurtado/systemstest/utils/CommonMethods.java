@@ -8,7 +8,7 @@ import com.liferay.gs.testFramework.SeleniumReadPropertyKeys;
 import com.liferay.gs.testFramework.SeleniumWaitMethods;
 
 public class CommonMethods {
-
+	
 	public void clickOnFilterField(By locator) {
 		waitElementVisibilityAndBeClickable(locator);
 		SeleniumReadPropertyKeys.DRIVER.findElement(locator).click();
@@ -58,6 +58,13 @@ public class CommonMethods {
 		clickOnButton(locator);
 	}
 
-	Actions action = new Actions(SeleniumReadPropertyKeys.DRIVER);
+	public String returnElementFromPage(By locator) {
+		return SeleniumReadPropertyKeys.DRIVER.findElement(locator).getText();
+	}
 
+	public String returnList(By locator) {
+		return SeleniumReadPropertyKeys.DRIVER.findElement(locator).getText();
+	}
+
+	Actions action = new Actions(SeleniumReadPropertyKeys.DRIVER);
 }

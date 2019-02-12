@@ -2,7 +2,7 @@ $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.
 formatter.feature({
   "line": 2,
   "name": "Putting any stuff on the cart while a user has money.",
-  "description": "As a user, I want to choose any items on Netshoes website to spend his money.",
+  "description": "As a user, I want to choose any items on Netshoes website to spend my money.",
   "id": "putting-any-stuff-on-the-cart-while-a-user-has-money.",
   "keyword": "Feature",
   "tags": [
@@ -14,9 +14,9 @@ formatter.feature({
 });
 formatter.scenarioOutline({
   "line": 5,
-  "name": "Choosing items to put on the Cart while I have money",
+  "name": "Choosing items to put on the Cart while a user has money",
   "description": "",
-  "id": "putting-any-stuff-on-the-cart-while-a-user-has-money.;choosing-items-to-put-on-the-cart-while-i-have-money",
+  "id": "putting-any-stuff-on-the-cart-while-a-user-has-money.;choosing-items-to-put-on-the-cart-while-a-user-has-money",
   "type": "scenario_outline",
   "keyword": "Scenario Outline"
 });
@@ -39,7 +39,7 @@ formatter.examples({
   "line": 10,
   "name": "",
   "description": "",
-  "id": "putting-any-stuff-on-the-cart-while-a-user-has-money.;choosing-items-to-put-on-the-cart-while-i-have-money;",
+  "id": "putting-any-stuff-on-the-cart-while-a-user-has-money.;choosing-items-to-put-on-the-cart-while-a-user-has-money;",
   "rows": [
     {
       "cells": [
@@ -47,32 +47,44 @@ formatter.examples({
         "male or female"
       ],
       "line": 11,
-      "id": "putting-any-stuff-on-the-cart-while-a-user-has-money.;choosing-items-to-put-on-the-cart-while-i-have-money;;1"
+      "id": "putting-any-stuff-on-the-cart-while-a-user-has-money.;choosing-items-to-put-on-the-cart-while-a-user-has-money;;1"
     },
     {
       "cells": [
-        "1000",
-        "calcado masculino"
+        "450",
+        "calcado feminino"
       ],
       "line": 12,
-      "id": "putting-any-stuff-on-the-cart-while-a-user-has-money.;choosing-items-to-put-on-the-cart-while-i-have-money;;2"
+      "id": "putting-any-stuff-on-the-cart-while-a-user-has-money.;choosing-items-to-put-on-the-cart-while-a-user-has-money;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5642851026,
+  "duration": 4109761149,
   "status": "passed"
 });
 formatter.before({
-  "duration": 1021973749,
+  "duration": 1084173063,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 592738448,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 597320179,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 583969886,
   "status": "passed"
 });
 formatter.scenario({
   "line": 12,
-  "name": "Choosing items to put on the Cart while I have money",
+  "name": "Choosing items to put on the Cart while a user has money",
   "description": "",
-  "id": "putting-any-stuff-on-the-cart-while-a-user-has-money.;choosing-items-to-put-on-the-cart-while-i-have-money;;2",
+  "id": "putting-any-stuff-on-the-cart-while-a-user-has-money.;choosing-items-to-put-on-the-cart-while-a-user-has-money;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
@@ -84,7 +96,7 @@ formatter.scenario({
 });
 formatter.step({
   "line": 6,
-  "name": "a user has 1000 reais to spend",
+  "name": "a user has 450 reais to spend",
   "matchedColumns": [
     0
   ],
@@ -92,7 +104,7 @@ formatter.step({
 });
 formatter.step({
   "line": 7,
-  "name": "a user chooses the products \"calcado masculino\"",
+  "name": "a user chooses the products \"calcado feminino\"",
   "matchedColumns": [
     1
   ],
@@ -106,34 +118,34 @@ formatter.step({
 formatter.match({
   "arguments": [
     {
-      "val": "1000",
+      "val": "450",
       "offset": 11
     }
   ],
-  "location": "PuttingStuffOnTheCartStep.aUserHasReaisToSpend(int)"
+  "location": "PuttingStuffOnTheCartStep.aUserHasReaisToSpend(double)"
 });
 formatter.result({
-  "duration": 73988038,
+  "duration": 71062753,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "calcado masculino",
+      "val": "calcado feminino",
       "offset": 29
     }
   ],
   "location": "PuttingStuffOnTheCartStep.aUserChoosesTheProducts(String)"
 });
 formatter.result({
-  "duration": 8338584382,
+  "duration": 9560855524,
   "status": "passed"
 });
 formatter.match({
   "location": "PuttingStuffOnTheCartStep.whileAUserHasMoneyWillCanPutMoreProductsOnTheCart()"
 });
 formatter.result({
-  "duration": 7029030211,
+  "duration": 13707247542,
   "status": "passed"
 });
 });

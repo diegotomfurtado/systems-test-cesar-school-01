@@ -24,21 +24,21 @@ public class FilteringShoesFromHomePageStep {
 	}
 
 	@Given("^a user is on Home page without login$")
-	public void aUserIsOnHomePageWithoutLogin() throws Throwable {
+	public void aUserIsOnHomePageWithoutLogin() {
 
 		_homePage.checkingIfThereIsALogInElementOnHomePage();
 		Assert.assertEquals("Entrar", "Entrar");
 	}
 
-	@When("^a user will search \"([^\"]*)\" on the filter$")
-	public void aUserWillSearchOnTheFilter(String textToInput) throws Throwable {
+	@When("^a user search \"([^\"]*)\" on the filter$")
+	public void aUserSearchOnTheFilter(String textToInput){
 
 		_homePage.inputTextOnMainFilter(textToInput);
 		_homePage.clickOnButtonMainFilter();
 	}
 
 	@Then("^a user will see \"([^\"]*)\" available on Netshoes$")
-	public void aUserWillSeeAvailableOnNetshoes(String getTextFromFilter) throws Throwable {
+	public void aUserWillSeeAvailableOnNetshoes(String getTextFromFilter){
 
 		_searchPage.checkingIfThereIsProductList();
 		Assert.assertTrue(_searchPage.getProductReturnFromTheFilter().contains(getTextFromFilter));
