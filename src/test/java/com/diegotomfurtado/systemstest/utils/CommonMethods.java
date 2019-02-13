@@ -54,15 +54,20 @@ public class CommonMethods {
 
 	public void clickOnFirstProduct(By locator) {
 
+		waitElementVisibilityAndBeClickable(locator);
 		action.moveToElement(SeleniumReadPropertyKeys.DRIVER.findElement(locator)).build().perform();
 		clickOnButton(locator);
 	}
 
 	public String returnElementFromPage(By locator) {
+		
+		waitElementVisibilityAndBeClickable(locator);
 		return SeleniumReadPropertyKeys.DRIVER.findElement(locator).getText();
 	}
 
 	public String returnList(By locator) {
+		
+		waitElementVisibilityAndBeClickable(locator);
 		return SeleniumReadPropertyKeys.DRIVER.findElement(locator).getText();
 	}
 

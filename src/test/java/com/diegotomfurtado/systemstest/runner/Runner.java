@@ -20,11 +20,12 @@ import cucumber.api.junit.Cucumber;
 				{
 //				"src/test/resources/acceptancecriteria/FilteringAnyThingFromHomePage.feature",
 //				"src/test/resources/acceptancecriteria/PuttingStuffOnTheCart.feature",
-//				"src/test/resources/acceptancecriteria/CustomerService.feature"
+//				"src/test/resources/acceptancecriteria/CustomerService.feature",
+				"src/test/resources/acceptancecriteria/ListOfSocialMedia.feature"
 				}, 
 		glue = 
 				{
-				"com.diegotomfurtado.systemstest.steps" 
+				"com.diegotomfurtado.systemstest.steps"
 				}, 
 		tags = 
 				{ 
