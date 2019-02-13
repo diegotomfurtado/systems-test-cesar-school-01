@@ -61,23 +61,23 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 4109761149,
+  "duration": 6615761416,
   "status": "passed"
 });
 formatter.before({
-  "duration": 1084173063,
+  "duration": 668000732,
   "status": "passed"
 });
 formatter.before({
-  "duration": 592738448,
+  "duration": 829198455,
   "status": "passed"
 });
 formatter.before({
-  "duration": 597320179,
+  "duration": 671047505,
   "status": "passed"
 });
 formatter.before({
-  "duration": 583969886,
+  "duration": 1027764981,
   "status": "passed"
 });
 formatter.scenario({
@@ -125,7 +125,7 @@ formatter.match({
   "location": "PuttingStuffOnTheCartStep.aUserHasReaisToSpend(double)"
 });
 formatter.result({
-  "duration": 71062753,
+  "duration": 110276822,
   "status": "passed"
 });
 formatter.match({
@@ -138,14 +138,9 @@ formatter.match({
   "location": "PuttingStuffOnTheCartStep.aUserChoosesTheProducts(String)"
 });
 formatter.result({
-  "duration": 9560855524,
+  "duration": 38740571274,
   "status": "passed"
 });
 formatter.match({
   "location": "PuttingStuffOnTheCartStep.whileAUserHasMoneyWillCanPutMoreProductsOnTheCart()"
-});
-formatter.result({
-  "duration": 13707247542,
-  "status": "passed"
-});
 });

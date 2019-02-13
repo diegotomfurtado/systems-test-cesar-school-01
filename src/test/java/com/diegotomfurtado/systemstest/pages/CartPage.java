@@ -54,14 +54,17 @@ public class CartPage {
 
 			_commonMethods.returnToPreviousPage();
 			_commonMethods.returnToPreviousPage();
-			_searchPage.puttingMoreThanOneProductOnTheCart();
+			_searchPage.chooseTheNewReleasePrice();
+			_searchPage.puttingTheProductOnTheCart();
 
 			totalPriceFromCart = getTotalPriceFromCart();
+			System.out.println("TOTAL ACUMULADO: " + totalPriceFromCart);
 		}
 		
-		if(totalPriceFromCart >= getTotalMoneyToInvest) {
+		if(totalPriceFromCart > getTotalMoneyToInvest) {
 			
 			_searchPage.removingAProductOnTheCart();
+			System.out.println("TOTAL FINAL: " + totalPriceFromCart);
 		}
 
 		return true;
