@@ -14,57 +14,56 @@ public class CartPage {
 		String real;
 		String getTextFromFilter = null;
 
-		
 		try {
-			
+
 			getTextFromFilter = _commonMethods.readingTheFilterResult(_totalPriceFromCartUI01);
-			
+
 		} catch (Exception e) {
 
 			getTextFromFilter = _commonMethods.readingTheFilterResult(_totalPriceFromCartUI02);
 
 		} finally {
-			
+
 			if (getTextFromFilter.length() <= 9) {
-				
+
 				// Getting the Total from the Cart and convert to double.
 				resultTotalFromCart = Double
 						.parseDouble(getTextFromFilter.substring(getTextFromFilter.indexOf("R") + 3).replace(",", "."));
-				
+
 				return resultTotalFromCart;
-				
+
 			} else
-				
+
 				real = getTextFromFilter.replace(".", "");
-			
+
 			// Getting the Total from the Cart and convert to double.
-			resultTotalFromCart = Double.parseDouble(real.substring(getTextFromFilter.indexOf("R") + 3).replace(",", "."));
-			
+			resultTotalFromCart = Double
+					.parseDouble(real.substring(getTextFromFilter.indexOf("R") + 3).replace(",", "."));
+
 		}
 
 		return resultTotalFromCart;
-		
+
 	}
 
 	public boolean puttingIntoTheCartWhileHasMoney(double getTotalMoneyToInvest) {
 
 		Double totalPriceFromCart = getTotalPriceFromCart();
-		
+
 		while (totalPriceFromCart <= getTotalMoneyToInvest) {
 
 			_commonMethods.returnToPreviousPage();
 			_commonMethods.returnToPreviousPage();
 			_searchPage.chooseTheNewReleasePrice();
+			_searchPage.selectAProductFromTheProductList();
 			_searchPage.puttingTheProductOnTheCart();
 
 			totalPriceFromCart = getTotalPriceFromCart();
-			System.out.println("TOTAL ACUMULADO: " + totalPriceFromCart);
 		}
-		
-		if(totalPriceFromCart > getTotalMoneyToInvest) {
-			
+
+		if (totalPriceFromCart > getTotalMoneyToInvest) {
+
 			_searchPage.removingAProductOnTheCart();
-			System.out.println("TOTAL FINAL: " + totalPriceFromCart);
 		}
 
 		return true;

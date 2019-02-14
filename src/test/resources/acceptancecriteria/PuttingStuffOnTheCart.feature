@@ -9,5 +9,5 @@ Scenario Outline: Choosing items to put on the Cart while a user has money
 	
 	Examples: 
 		| money | male or female	|
-		| 450  | calcado feminino	|
+		| 500  | calcado feminino	|
 		

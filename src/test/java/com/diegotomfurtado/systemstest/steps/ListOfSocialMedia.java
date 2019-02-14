@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Assert;
 
 import com.diegotomfurtado.systemstest.pages.HomePage;
-import com.diegotomfurtado.systemstest.pages.InstagranPage;
+import com.diegotomfurtado.systemstest.pages.SocialMediaPage;
 import com.liferay.gs.testFramework.SeleniumReadPropertyKeys;
 
 import cucumber.api.java.Before;
@@ -23,20 +23,18 @@ public class ListOfSocialMedia {
 	}
 	
 	@Given("^I know where is the social media information$")
-	public void i_know_where_is_the_social_media_information(){
+	public void iKnowWhereIsTheSocialMediaInformation(){
 		
 		_homePage.verifyIfSocialMediaIsPresentOnPage();
 	}
 
 	@Then("^I will check if there are at least one of that$")
-	public void i_will_check_if_there_are_at_least_one_of_that(){
+	public void iWillCheckIfThereAreAtLeastOneOfThat() throws InterruptedException{
 
 		_homePage.clickOnSocialMediaLink();
-		_instagran.clickToremoveAModalAlert();
-		Assert.assertEquals("netshoes", _instagran.checkingIfSocialMediaIsAvailable());
+		Assert.assertEquals("Netshoes", _instagran.checkingIfSocialMediaIsAvailable());
 	}
 	
 	HomePage _homePage = new HomePage();
-	InstagranPage _instagran = new InstagranPage();
-	
+	SocialMediaPage _instagran = new SocialMediaPage();
 }

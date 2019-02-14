@@ -33,8 +33,18 @@ public class FilteringShoesFromHomePageStep {
 	@When("^a user search \"([^\"]*)\" on the filter$")
 	public void aUserSearchOnTheFilter(String textToInput){
 
-		_homePage.inputTextOnMainFilter(textToInput);
-		_homePage.clickOnButtonMainFilter();
+		try {
+
+			_homePage.clickToCloseMarketPopup();
+		} catch (Exception e) {
+
+			_homePage.inputTextOnMainFilter(textToInput);
+			_homePage.clickOnButtonMainFilter();
+			
+		}finally {
+			_homePage.inputTextOnMainFilter(textToInput);
+			_homePage.clickOnButtonMainFilter();
+		}
 	}
 
 	@Then("^a user will see \"([^\"]*)\" available on Netshoes$")
