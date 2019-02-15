@@ -33,6 +33,6 @@ public class PaymentMethod {
 		Assert.assertTrue(_homePage.ListOfCredCards(creditCard));
 	}
 	
-	HomePage _homePage = new HomePage();
+	private static final HomePage _homePage = new HomePage();
 
 }

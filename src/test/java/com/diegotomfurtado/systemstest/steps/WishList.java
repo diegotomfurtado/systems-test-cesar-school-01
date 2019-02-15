@@ -5,8 +5,6 @@ import java.util.concurrent.TimeUnit;
 import org.testng.Assert;
 
 import com.diegotomfurtado.systemstest.pages.HomePage;
-import com.diegotomfurtado.systemstest.pages.WishListPage;
-import com.diegotomfurtado.systemstest.utils.CommonMethods;
 import com.liferay.gs.testFramework.SeleniumReadPropertyKeys;
 
 import cucumber.api.java.Before;
@@ -30,10 +28,13 @@ public class WishList {
 		try {
 
 			_homePage.clickToCloseMarketPopup();
+			
 		} catch (Exception e) {
 
 			_homePage.performLogin();
+			
 		} finally {
+			
 			_homePage.performLogin();
 		}
 	}
@@ -44,16 +45,20 @@ public class WishList {
 		try {
 
 			_homePage.clickToCloseMarketPopup();
+			
 		} catch (Exception e) {
 
 			_homePage.inputTextOnMainFilter(textToInput);
 			_homePage.clickOnButtonMainFilter();
 			_homePage.selectItemsToMyWishList();
+			
 		}
 		finally{
+			
 			_homePage.inputTextOnMainFilter(textToInput);
 			_homePage.clickOnButtonMainFilter();
 			_homePage.selectItemsToMyWishList();
+			
 		}
 	}
 
@@ -65,9 +70,5 @@ public class WishList {
 	}
 	
 
-	HomePage _homePage = new HomePage();
-	WishListPage _wishListPage = new WishListPage();
-	CommonMethods _commonMethods = new CommonMethods();
-	
-	
+	private static final HomePage _homePage = new HomePage();
 }

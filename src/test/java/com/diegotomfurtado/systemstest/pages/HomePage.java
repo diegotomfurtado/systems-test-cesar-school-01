@@ -10,17 +10,17 @@ public class HomePage {
 
 	public void inputTextOnMainFilter(String textToInput) {
 
-		_commonMethods.input(_mailFilterOnTheTopHeader, textToInput);
+		_commonMethods.input(_mailFilterOnTheTopHeaderLocator, textToInput);
 	}
 
 	public void clickOnButtonMainFilter() {
 
-		_commonMethods.clickOnButton(_buttonMainFilter);
+		_commonMethods.clickOnButton(_buttonMainFilterLocator);
 	}
 
 	public void checkingIfThereIsALogInElementOnHomePage() {
 
-		_commonMethods.clickOnButton(_bannerFromHomePage);
+		_commonMethods.clickOnButton(_bannerFromHomePageLocator);
 	}
 
 	public void filteringBySpecificProduct(String textToInput) {
@@ -31,27 +31,27 @@ public class HomePage {
 
 	public void clickOnButtonCustomerService() {
 
-		_commonMethods.clickOnButton(_customerServicePage);
+		_commonMethods.clickOnButton(_customerServicePageLocator);
 	}
 
 	public void verifyIfSocialMediaIsPresentOnPage() {
 
-		_commonMethods.returnElementFromPage(_verifySocialMediaPresent);
+		_commonMethods.returnElementFromPage(_verifySocialMediaPresentLocator);
 	}
 
 	public void clickOnSocialMediaLink() {
 
-		_commonMethods.clickOnButton(_redirectToSocialMedia);
+		_commonMethods.clickOnButton(_redirectToSocialMediaLocator);
 	}
 
 	public boolean creditCardPackage() {
 
-		return _commonMethods.findElementOnPage(_creditCardsElements);
+		return _commonMethods.findElementOnPage(_creditCardsElementsLocator);
 	}
 
 	public boolean ListOfCredCards(String creditCard) {
 
-		String convertXpathInString = _creditCardsList.toString();
+		String convertXpathInString = _creditCardsListLocator.toString();
 		String replaceString = convertXpathInString.replace("By.xpath: ", "");
 
 		By convertStringToXpath = xpath(replaceString.replace("@title='", "@title='" + creditCard + ""));
@@ -60,7 +60,7 @@ public class HomePage {
 	}
 	public void performLogin() {
 		
-		_commonMethods.clickOnButton(_clickOnLoginButton);
+		_commonMethods.clickOnButton(_clickOnLoginButtonLocator);
 		_loginPage.clickOnSignInButton();
 		_loginPage.typeEmailAddressOnLoginForm();
 		_loginPage.typePasswordOnLoginForm();
@@ -69,12 +69,12 @@ public class HomePage {
 	
 	public void clickToCloseMarketPopup() {
 		
-		_commonMethods.clickOnButton(_closeMarketPopup);
+		_commonMethods.clickOnButton(_closeMarketPopupLocator);
 	}
 
 	public void selectItemsToMyWishList() {
 
-		_commonMethods.clickOnButton(_myWishListLocator);
+		_commonMethods.clickOnButton(_myWishListIconLocator);
 	}
 	
 	public void clickOnMyWishListButton() {
@@ -84,25 +84,25 @@ public class HomePage {
 	
 	public boolean checkItemsOnWishListPage() {
 
-		return _commonMethods.findElementOnPage(_myWishList);
+		return _commonMethods.findElementOnPage(_myWishListLocator);
 	}
 
 	private static final CommonMethods _commonMethods = new CommonMethods();
 	private static final LoginPage _loginPage = new LoginPage();
 	
-	private static final By _mailFilterOnTheTopHeader = xpath("//input[@id='search-input']");
-	private static final By _buttonMainFilter = xpath("//button[contains(@class,'border ns-icon ns-icon-search')]");
-	private static final By _bannerFromHomePage = xpath("//div[@id='header-user-anonymous']");
-	private static final By _customerServicePage = xpath("//a[@class='central-doubts-button']");
-	private static final By _verifySocialMediaPresent = xpath("//ul[@class='share-bar-social']");
-	private static final By _redirectToSocialMedia = xpath("//ul[@class='share-bar-social']//a[contains(@class, 'youtube')]");
-	private static final By _creditCardsElements = xpath("//ul[@class = 'payment-flag-list ']");
-	private static final By _creditCardsList = xpath("//ul[@class = 'payment-flag-list ']//*[@title='']");
-	private static final By _clickOnLoginButton = xpath("//*[@class='ns-icon ns-icon-arrow-down prv-action ns-void-link']//i[@class='ns-icon-user-ico']");
-	private static final By _closeMarketPopup = xpath("//*[@class=\"fechar-x\"]");
-	private static final By _myWishListLocator = xpath("//*[@class='wishlist__heart']");
+	private static final By _bannerFromHomePageLocator = xpath("//div[@id='header-user-anonymous']");
+	private static final By _buttonMainFilterLocator = xpath("//button[contains(@class,'border ns-icon ns-icon-search')]");
+	private static final By _clickOnLoginButtonLocator = xpath("//*[@class='ns-icon ns-icon-arrow-down prv-action ns-void-link']//i[@class='ns-icon-user-ico']");
+	private static final By _closeMarketPopupLocator = xpath("//*[@class=\"fechar-x\"]");
+	private static final By _creditCardsElementsLocator = xpath("//ul[@class = 'payment-flag-list ']");
+	private static final By _creditCardsListLocator = xpath("//ul[@class = 'payment-flag-list ']//*[@title='']");
+	private static final By _customerServicePageLocator = xpath("//a[@class='central-doubts-button']");
+	private static final By _mailFilterOnTheTopHeaderLocator = xpath("//input[@id='search-input']");
 	private static final By _myWishListButtonLocator = xpath("//*[@class='my-wishlist']//a[contains(@href,'wishlist')]");
-	private static final By _myWishList = xpath("//*[@class='wishlist__items-list']");
+	private static final By _myWishListIconLocator = xpath("//*[@class='wishlist__heart']");
+	private static final By _myWishListLocator = xpath("//*[@class='wishlist__items-list']");
+	private static final By _redirectToSocialMediaLocator = xpath("//ul[@class='share-bar-social']//a[contains(@class, 'youtube')]");
+	private static final By _verifySocialMediaPresentLocator = xpath("//ul[@class='share-bar-social']");
 	
 
 }

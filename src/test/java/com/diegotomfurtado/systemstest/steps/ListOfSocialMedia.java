@@ -32,9 +32,9 @@ public class ListOfSocialMedia {
 	public void iWillCheckIfThereAreAtLeastOneOfThat() throws InterruptedException{
 
 		_homePage.clickOnSocialMediaLink();
-		Assert.assertEquals("Netshoes", _instagran.checkingIfSocialMediaIsAvailable());
+		Assert.assertEquals("Netshoes", _socialMedia.checkingIfSocialMediaIsAvailable());
 	}
 	
-	HomePage _homePage = new HomePage();
-	SocialMediaPage _instagran = new SocialMediaPage();
+	private static final HomePage _homePage = new HomePage();
+	private static final SocialMediaPage _socialMedia = new SocialMediaPage();
 }

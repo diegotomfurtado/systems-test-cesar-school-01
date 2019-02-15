@@ -10,38 +10,38 @@ public class SearchPage {
 
 	public void checkingIfThereIsProductList() {
 
-		_commonMethods.checkProductsList(_productList);
+		_commonMethods.checkProductsList(_productListLocator);
 	}
 
 	public String getProductReturnFromTheFilter() {
 
-		String getTextFromFilter = _commonMethods.readingTheFilterResult(_readingTheFilterResult);
+		String getTextFromFilter = _commonMethods.readingTheFilterResult(_readingTheFilterResultLocator);
 		return getTextFromFilter;
 	}
 
 	public void clickOnDropListFromSearchOrderButton() {
 
-		_commonMethods.clickOnButton(_searchOrderButton);
+		_commonMethods.clickOnButton(_searchOrderButtonLocator);
 	}
 
 	public void chooseTheHighestPriceOnSearchOrderButton() {
 
-		_commonMethods.clickOnButton(_chooseOrderProductListByHighestPrice);
+		_commonMethods.clickOnButton(_chooseOnProductListByHighestPriceLocator);
 	}
 
 	public void chooseTheNewReleasePriceOnSearchOrderButton() {
 
-		_commonMethods.clickOnButton(_chooseOrderProductListByNewReleasePrice);
+		_commonMethods.clickOnButton(_chooseOnProductListByNewReleasePriceLocator);
 	}
 
 	public void chooseTheLowestPriceOnSearchOrderButton() {
 
-		_commonMethods.clickOnButton(_chooseOrderProductListByLowestPrice);
+		_commonMethods.clickOnButton(_chooseOnProductListByLowestPriceLocator);
 	}
 
 	public void selectAProductFromTheProductList() {
 
-		_commonMethods.clickOnFirstProduct(_conferingAProduct);
+		_commonMethods.clickOnFirstProduct(_conferingAProductLocator);
 	}
 
 	public void chooseTheHighestPrice() {
@@ -68,7 +68,7 @@ public class SearchPage {
 	public void selectASizeOfProduct() {
 
 		try {
-			_commonMethods.clickOnButton(_chooseTheSizeProduct);
+			_commonMethods.clickOnButton(_chooseTheSizeProductLocator);
 		} catch (Exception e) {
 
 			_commonMethods.returnToPreviousPage();
@@ -81,7 +81,7 @@ public class SearchPage {
 
 		try {
 			
-			_commonMethods.clickOnButton(_buttonAddOnCart);
+			_commonMethods.clickOnButton(_buttonAddOnCartLocator);
 		} catch (Exception e) {
 
 			_commonMethods.returnToPreviousPage();
@@ -99,24 +99,24 @@ public class SearchPage {
 
 	public void removingAProductOnTheCart() {
 
-		_commonMethods.clickOnButton(_removingTheLastItemFromTheCart);
+		_commonMethods.clickOnButton(_removingTheLastItemFromTheCartLocator);
 	}
 
 
 	private static final CommonMethods _commonMethods = new CommonMethods();
 
-	private static final By _productList = xpath("//div[contains(@class, 'item card-desktop') and @sku]");
-	private static final By _readingTheFilterResult = xpath("//h1[contains(@class, 'search-query')]");
-	private static final By _searchOrderButton = xpath("//li[@class='item']");
-	private static final By _chooseOrderProductListByHighestPrice = xpath(
+	private static final By _productListLocator = xpath("//div[contains(@class, 'item card-desktop') and @sku]");
+	private static final By _readingTheFilterResultLocator = xpath("//h1[contains(@class, 'search-query')]");
+	private static final By _searchOrderButtonLocator = xpath("//li[@class='item']");
+	private static final By _chooseOnProductListByHighestPriceLocator = xpath(
 			"//li[@class = 'item opened']//a[contains(@href,'highest-first')]");
-	private static final By _chooseOrderProductListByNewReleasePrice = xpath(
+	private static final By _chooseOnProductListByNewReleasePriceLocator = xpath(
 			"//li[@class = 'item opened']//a[contains(@href,'new-releases')]");
-	private static final By _chooseOrderProductListByLowestPrice = xpath(
+	private static final By _chooseOnProductListByLowestPriceLocator = xpath(
 			"//li[@class = 'item opened']//a[contains(@href,'lowest-first')]");
-	private static final By _conferingAProduct = xpath("//a[@class ='i card-link']");
-	private static final By _chooseTheSizeProduct = xpath("//a[@class = 'product-item' and @qa-option= 'available']");
-	private static final By _buttonAddOnCart = xpath("//button[@id='buy-button-now']");
-	private static final By _removingTheLastItemFromTheCart = xpath(
+	private static final By _conferingAProductLocator = xpath("//a[@class ='i card-link']");
+	private static final By _chooseTheSizeProductLocator = xpath("//a[@class = 'product-item' and @qa-option= 'available']");
+	private static final By _buttonAddOnCartLocator = xpath("//button[@id='buy-button-now']");
+	private static final By _removingTheLastItemFromTheCartLocator = xpath(
 			"//tr[contains(@class,'product-line')][2]//*[@class='actions']");
 }

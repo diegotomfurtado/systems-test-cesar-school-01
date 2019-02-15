@@ -1,5 +1,7 @@
 package com.diegotomfurtado.systemstest.utils;
 
+import static org.openqa.selenium.By.xpath;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -85,7 +87,48 @@ public class CommonMethods {
 			SeleniumReadPropertyKeys.DRIVER.switchTo().window(winHandle);
 		}
 	}
+	
+	public Double getTotalPriceFromCart() {
+
+		double resultTotalFromCart = 0;
+		String real;
+		String getTextFromFilter = null;
+
+		try {
+
+			getTextFromFilter = readingTheFilterResult(_totalPriceFromCartUI01Locator);
+
+		} catch (Exception e) {
+
+			getTextFromFilter = readingTheFilterResult(_totalPriceFromCartUI02Locator);
+
+		} finally {
+
+			if (getTextFromFilter.length() <= 9) {
+
+				// Getting the Total from the Cart and convert to double.
+				resultTotalFromCart = Double
+						.parseDouble(getTextFromFilter.substring(getTextFromFilter.indexOf("R") + 3).replace(",", "."));
+
+				return resultTotalFromCart;
+
+			} else
+
+				real = getTextFromFilter.replace(".", "");
+
+			// Getting the Total from the Cart and convert to double.
+			resultTotalFromCart = Double
+					.parseDouble(real.substring(getTextFromFilter.indexOf("R") + 3).replace(",", "."));
+
+		}
+
+		return resultTotalFromCart;
+
+	}
 
 	Actions action = new Actions(SeleniumReadPropertyKeys.DRIVER);
 	HomePage _homePage = new HomePage();
+	
+	private static final By _totalPriceFromCartUI01Locator = xpath("//p[@class='cart-price-text']");
+	private static final By _totalPriceFromCartUI02Locator = xpath("//div[@class='upsell__product-price']");
 }

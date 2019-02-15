@@ -11,22 +11,22 @@ public class WishListPage {
 
 	public void typeOnHelpField(String typeOnHelpField) {
 		
-		_commonMethods.input(_helpField, typeOnHelpField);
+		_commonMethods.input(_helpFieldLocator, typeOnHelpField);
 	}
 	
 	public void clickOnSearchElement() {
 		
-		_commonMethods.clickOnButton(_searchElement);
+		_commonMethods.clickOnButton(_searchElementLocator);
 	}
 	
 	public String lookingFor() {
 		
-		return _commonMethods.returnElementFromPage(_resultAfterSearch);
+		return _commonMethods.returnElementFromPage(_resultAfterSearchLocator);
 	}
 
 	public boolean returnAListWithPossibleResults() {
 
-		String returnElementFromSearch = _commonMethods.returnElementFromPage(_emptyList);
+		String returnElementFromSearch = _commonMethods.returnElementFromPage(_emptyListLocator);
 		
 		if (returnElementFromSearch.isEmpty()){
 			
@@ -41,8 +41,8 @@ public class WishListPage {
 	
 	private static final CommonMethods _commonMethods = new CommonMethods();
 	
-	private static final By _helpField = xpath("//input[@id='dt-faq-search-input']");
-	private static final By _searchElement = xpath("//button[@id='dt-faq-search-button']");
-	private static final By _resultAfterSearch = xpath("//i[@class='ng-binding']");
-	private static final By _emptyList = xpath("//strong[@class='ng-binding']");
+	private static final By _helpFieldLocator = xpath("//input[@id='dt-faq-search-input']");
+	private static final By _searchElementLocator = xpath("//button[@id='dt-faq-search-button']");
+	private static final By _resultAfterSearchLocator = xpath("//i[@class='ng-binding']");
+	private static final By _emptyListLocator = xpath("//strong[@class='ng-binding']");
 }

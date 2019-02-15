@@ -11,9 +11,9 @@ public class SocialMediaPage {
 	public String checkingIfSocialMediaIsAvailable() throws InterruptedException {
 
 		_commonMethods.switchToNewWindowPage();
-		return _commonMethods.returnElementFromPage(_clickToRemoveAModalAlert_Youtube);
+		return _commonMethods.returnElementFromPage(_checkSocialMediaLocator);
 	}
 
 	private static final CommonMethods _commonMethods = new CommonMethods();
-	private static final By _clickToRemoveAModalAlert_Youtube = xpath("//span[@id='channel-title']");
+	private static final By _checkSocialMediaLocator = xpath("//span[@id='channel-title']");
 }

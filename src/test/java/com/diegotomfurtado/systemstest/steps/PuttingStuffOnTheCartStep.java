@@ -46,6 +46,7 @@ public class PuttingStuffOnTheCartStep {
 	}
 
 	double getTotalMoney = 0;
+	
 	private static final HomePage _homePage = new HomePage();
 	private static final SearchPage _searchPage = new SearchPage();
 	private static final CartPage _cartPage = new CartPage();
