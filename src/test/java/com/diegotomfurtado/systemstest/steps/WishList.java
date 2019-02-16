@@ -21,54 +21,27 @@ public class WishList {
 				TimeUnit.SECONDS);
 		SeleniumReadPropertyKeys.DRIVER.get(SeleniumReadPropertyKeys.getUrlToHome());
 	}
-	
+
 	@Given("^a user is logged into his Netshoes account$")
-	public void aUserIsLoggedIntoHisNetshoesAccount() throws InterruptedException{
+	public void aUserIsLoggedIntoHisNetshoesAccount() throws Exception {
 
-		try {
-
-			_homePage.clickToCloseMarketPopup();
-			
-		} catch (Exception e) {
-
-			_homePage.performLogin();
-			
-		} finally {
-			
-			_homePage.performLogin();
-		}
+		_homePage.performLogin();
 	}
 
 	@When("^a user selects \"([^\"]*)\" to put on Wish List$")
-	public void aUserSelectsToPutOnWishList(String textToInput){
+	public void aUserSelectsToPutOnWishList(String textToInput) throws Exception {
 
-		try {
-
-			_homePage.clickToCloseMarketPopup();
-			
-		} catch (Exception e) {
-
-			_homePage.inputTextOnMainFilter(textToInput);
-			_homePage.clickOnButtonMainFilter();
-			_homePage.selectItemsToMyWishList();
-			
-		}
-		finally{
-			
-			_homePage.inputTextOnMainFilter(textToInput);
-			_homePage.clickOnButtonMainFilter();
-			_homePage.selectItemsToMyWishList();
-			
-		}
+		_homePage.inputTextOnMainFilter(textToInput);
+		_homePage.clickOnButtonMainFilter();
+		_homePage.selectItemsToMyWishList();
 	}
 
 	@Then("^a user could return anytime to finish his shopping$")
-	public void aUserCouldReturnAnytimeToFinishHisShopping() {
+	public void aUserCouldReturnAnytimeToFinishHisShopping() throws Exception {
 
 		_homePage.clickOnMyWishListButton();
 		Assert.assertTrue(_homePage.checkItemsOnWishListPage());
 	}
-	
 
 	private static final HomePage _homePage = new HomePage();
 }

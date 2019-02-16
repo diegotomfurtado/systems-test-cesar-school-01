@@ -12,7 +12,7 @@ public class LoginPage {
 		_commonMethods.clickOnButton(_clickToLoginPageLocator);
 	}
 
-	public void typeEmailAddressOnLoginForm() {
+	public void typeEmailAddressOnLoginForm()  {
 
 		_commonMethods.input(_typeOnSignInUserNameLocator, "diegotomfurtado@gmail.com");
 	}

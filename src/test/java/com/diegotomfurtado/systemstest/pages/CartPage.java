@@ -13,7 +13,6 @@ public class CartPage {
 			_commonMethods.returnToPreviousPage();
 			_commonMethods.returnToPreviousPage();
 			_searchPage.chooseTheNewReleasePrice();
-			_searchPage.selectAProductFromTheProductList();
 			_searchPage.puttingTheProductOnTheCart();
 
 			totalPriceFromCart = _commonMethods.getTotalPriceFromCart();

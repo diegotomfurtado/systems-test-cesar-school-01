@@ -34,5 +34,4 @@ public class PaymentMethod {
 	}
 	
 	private static final HomePage _homePage = new HomePage();
-
 }

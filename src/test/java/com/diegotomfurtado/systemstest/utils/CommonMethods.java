@@ -13,11 +13,13 @@ import com.liferay.gs.testFramework.SeleniumWaitMethods;
 public class CommonMethods {
 
 	public void clickOnFilterField(By locator) {
+		
 		waitElementVisibilityAndBeClickable(locator);
 		SeleniumReadPropertyKeys.DRIVER.findElement(locator).click();
 	}
 
 	public void clickOnButton(By locator) {
+		
 		waitElementVisibilityAndBeClickable(locator);
 		SeleniumReadPropertyKeys.DRIVER.findElement(locator).click();
 	}
@@ -47,11 +49,13 @@ public class CommonMethods {
 	}
 
 	public void waitElementAppearOnScreen(By locator) {
+
 		SeleniumWaitMethods.getWaitDriver().until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
 		SeleniumWaitMethods.getWaitDriver().until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 
 	public void waitElementVisibilityAndBeClickable(By locator) {
+
 		waitElementAppearOnScreen(locator);
 		SeleniumWaitMethods.getWaitDriver().until(ExpectedConditions.elementToBeClickable(locator));
 	}
@@ -80,14 +84,15 @@ public class CommonMethods {
 		return SeleniumReadPropertyKeys.DRIVER.findElement(locator).getText();
 	}
 
-	public void switchToNewWindowPage() throws InterruptedException {
+	public void switchToNewWindowPage(By locator) throws InterruptedException {
+		
 		for (String winHandle : SeleniumReadPropertyKeys.DRIVER.getWindowHandles()) {
 
 			Thread.sleep(3000);
 			SeleniumReadPropertyKeys.DRIVER.switchTo().window(winHandle);
 		}
 	}
-	
+
 	public Double getTotalPriceFromCart() {
 
 		double resultTotalFromCart = 0;
@@ -123,12 +128,11 @@ public class CommonMethods {
 		}
 
 		return resultTotalFromCart;
-
 	}
 
 	Actions action = new Actions(SeleniumReadPropertyKeys.DRIVER);
 	HomePage _homePage = new HomePage();
-	
+
 	private static final By _totalPriceFromCartUI01Locator = xpath("//p[@class='cart-price-text']");
 	private static final By _totalPriceFromCartUI02Locator = xpath("//div[@class='upsell__product-price']");
 }

@@ -10,7 +10,7 @@ public class SocialMediaPage {
 
 	public String checkingIfSocialMediaIsAvailable() throws InterruptedException {
 
-		_commonMethods.switchToNewWindowPage();
+		_commonMethods.switchToNewWindowPage(_checkSocialMediaLocator);
 		return _commonMethods.returnElementFromPage(_checkSocialMediaLocator);
 	}
 
