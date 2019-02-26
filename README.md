@@ -1,21 +1,16 @@
 # systems-test-cesar-school-01
 
+The purpose of this project is to show a basic project with viable testing architecture to automated web tests using Selenium WebDriver, Java as the programming language and Cucumber.
 
-### Exercício para quem já conhece o assunto
+## Test architecture
+We know that any automation project starting with a good test architecture. This project can be your initial test architecture for a faster start. You will see the following items in this architecture:
 
-**O que fazer?**
+* Use of Page Objects patters
+* Common Methods
+* Configuration through a properties file
+* Use a Liferay Framework to improve the properties file
 
-Automatizar fluxos de usuários que estão procurando por calçados e acessórios na Netshoes e pretendem fazer compras
+Do you have any other item to add on this test architecture? Please do a pull request or open an issue to discuss
 
-**O que usar?**
-
-CSS selector
-
-Selenium Web Driver
-
-**Como?**
-
-1. Entrar na [Netshoes](https://www.netshoes.com.br/)
-2. Mandar ver!
-
-Você deve interagir com a página como se estivesse interessado em fazer compras. Imagina que tem $1000 para gastar e por isso está percorrendo o site e suas funcionalidades.
+## The website that I've used to work it
+Netshoes -> https://www.netshoes.com.br/
